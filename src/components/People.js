@@ -17,14 +17,21 @@ export default function People() {
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [page]);
 
   return (
     <div className="people">
       <button
-        onClick={useEffect(() => {
+        onClick={() => {
+          setPage(page - 1);
+        }}
+      >
+        Previous Page
+      </button>
+      <button
+        onClick={() => {
           setPage(page + 1);
-        })}
+        }}
       >
         Next Page
       </button>
